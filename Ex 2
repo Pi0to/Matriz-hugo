@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int A[3][4], i, j, soma = 0, totalNumeros = 12;
+    float media;
+
+    // Leitura dos valores
+    for(i = 0; i < 3; i++) {
+        for(j = 0; j < 4; j++) {
+            printf("Digite o valor A[%d][%d]: ", i, j);
+            scanf("%d", &A[i][j]);
+            soma += A[i][j];
+        }
+    }
+
+    // Cálculo da média
+    media = (float)soma / totalNumeros;
+
+    // Exibição do resultado
+    printf("Soma de todos os números: %d\n", soma);
+    printf("Valor médio: %.2f\n", media);
+
+    return 0;
+}
