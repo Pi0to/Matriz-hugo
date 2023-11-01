@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    char tabuleiro[3][3];
+    int linha, coluna;
+    int xWin = 0, oWin = 0, empate = 0;
+
+    for(linha = 0; linha < 3; linha++) {
+        for(coluna = 0; coluna < 3; coluna++) {
+            scanf(" %c", &tabuleiro[linha][coluna]);
+
+            if(tabuleiro[linha][coluna] != 'X' && tabuleiro[linha][coluna] != 'O') {
+                printf("Caractere Inválido!\n");
+                return 0;
+            }
+
+            if(tabuleiro[linha][coluna] == 'X') {
+                xWin += 1;
+            } else {
+                oWin += 1;
+            }
+        }
+    }
+
+    if(xWin == 3 || oWin == 3) {
+        printf("Deu velha!\n");
+    } else {
+        printf("Ganhador: %c\n", (xWin > oWin) ? 'X' : 'O');
+    }
+
+    return 0;
+}
